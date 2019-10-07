@@ -1,9 +1,6 @@
 node {
-    
-	
-
     def newApp
-	def registry = 'https://registry-1.docker.io/v2/'
+    def registry = 'https://registry-1.docker.io/v2/'
 	def imagename = "yoavs013/todo"
     def registryCredential = 'dockerhub'
 	
@@ -17,11 +14,11 @@ node {
 		sh 'npm test'
 	}
 	stage('Building image') {
-        docker.withRegistry( 'https://' + registry, registryCredential ) {
-		    def buildName = registry +":'$BRANCH_NAME'_'$BUILD_NUMBER'"
-			newApp = docker.build buildName
-			newApp.push()
+        docker.withRegistry( registry, registryCredential ) {
+		    def buildName = imagename + ":'$BRANCH_NAME'_'$BUILD_NUMBER'"
+			newApp = docker.build(buildName)
+			newApp.push();
+			newApp.push('latest')
         }
 	}
-
 }
