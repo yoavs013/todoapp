@@ -19,6 +19,8 @@ node {
 			newApp = docker.build(buildName)
 			newApp.push();
 			newApp.push('latest')
+		
+		
         }
 	}
 }
