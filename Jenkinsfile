@@ -3,11 +3,11 @@ node {
 	
 
     def newApp
-    def registry = 'gustavoapolinario/microservices-node-todo-frontend'
+    def registry = 'frenzy669/yoav'
     def registryCredential = 'dockerhub'
 	
 	stage('Git') {
-		git 'https://github.com/gustavoapolinario/node-todo-frontend'
+		git 'https://github.com/yoavs013/todoapp.git'
 	}
 	stage('Build') {
 		sh 'npm install'
