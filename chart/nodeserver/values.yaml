@@ -28,7 +28,7 @@ image:
   #   periodSeconds: 10  
 service:
   name: Node
-  type: NodePort
+  type: LoadBalancer
   servicePort: 3000
 hpa:
   enabled: false
