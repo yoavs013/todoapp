@@ -3,7 +3,7 @@ node {
 	
 
     def newApp
-    def registry = 'frenzy669/yoav'
+    def registry = 'yoavs013/todo'
     def registryCredential = 'dockerhub'
 	
 	stage('Git') {
